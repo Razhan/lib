@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <item name="toolbar" type="id" />
+    <item name="double_confirm" type="string" />
+    <item name="exception_message_generic" type="string" />
+
+</resources>
