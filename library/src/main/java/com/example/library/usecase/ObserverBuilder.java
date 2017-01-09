@@ -23,30 +23,22 @@ public final class ObserverBuilder<T> {
 
     public ObserverBuilder() {
         onSuccessCallback = Functions.emptyConsumer();
-        onErrorCallback = new Consumer<Throwable>() {
-            @Override
-            public void accept(Throwable error) {
-                errorHandler.create(error);
-            }
-        };
+        onErrorCallback = error -> errorHandler.create(error);
         onCompleteCallback = Functions.EMPTY_ACTION;
     }
 
     public ObserverBuilder onSuccess(Consumer<T> consumer) {
-        checkNotNull(consumer);
-        onSuccessCallback = consumer;
+        onSuccessCallback = checkNotNull(consumer);
         return this;
     }
 
     public ObserverBuilder onError(Consumer<Throwable> consumer) {
-        checkNotNull(consumer);
-        onErrorCallback = consumer;
+        onErrorCallback = checkNotNull(consumer);
         return this;
     }
 
     public ObserverBuilder onComplete(Action action) {
-        checkNotNull(action);
-        onCompleteCallback = action;
+        onCompleteCallback = checkNotNull(action);
         return this;
     }
 

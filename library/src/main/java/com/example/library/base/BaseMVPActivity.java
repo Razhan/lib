@@ -6,6 +6,8 @@ import android.support.annotation.NonNull;
 
 import com.example.library.presenter.BasePresenter;
 
+import javax.inject.Inject;
+
 
 /**
  * Created by ranzh on 1/5/2017.
@@ -13,18 +15,18 @@ import com.example.library.presenter.BasePresenter;
 
 public abstract class BaseMVPActivity<P extends BasePresenter> extends BaseActivity implements MVPView {
 
-    private P presenter;
+    @Inject
+    P presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        presenter = createPresenter();
+        initializeInjector();
         presenter.attachView(this);
     }
 
-    @NonNull
-    protected abstract P createPresenter();
+    protected abstract void initializeInjector();
 
     @Override
     protected void onDestroy() {
@@ -36,7 +38,7 @@ public abstract class BaseMVPActivity<P extends BasePresenter> extends BaseActiv
     }
 
     @NonNull
-    public P presenter() {
+    public P getPresenter() {
         return presenter;
     }
 
@@ -46,7 +48,8 @@ public abstract class BaseMVPActivity<P extends BasePresenter> extends BaseActiv
     }
 
     @Override
-    public Context context() {
+    public Context getContext() {
         return this;
     }
+
 }

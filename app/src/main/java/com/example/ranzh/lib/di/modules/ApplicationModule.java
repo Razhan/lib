@@ -44,7 +44,4 @@ public class ApplicationModule {
         return uiThread;
     }
 
-
-
-
 }

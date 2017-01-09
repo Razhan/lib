@@ -83,12 +83,7 @@ public abstract class BaseActivity extends AppCompatActivity implements InitView
         getSupportActionBar().setDisplayHomeAsUpEnabled(showBackIcon());
         getSupportActionBar().setTitle(setToolBarText());
 
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                onBackPressed();
-            }
-        });
+        toolbar.setNavigationOnClickListener(view -> onBackPressed());
     }
 
     protected boolean showBackIcon() {
@@ -128,12 +123,7 @@ public abstract class BaseActivity extends AppCompatActivity implements InitView
 
         showToast(getString(R.string.double_confirm));
 
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                BackPressedOnce = false;
-            }
-        }, 2000);
+        new Handler().postDelayed(() -> BackPressedOnce = false, 2000);
     }
 
     public void showToast(String msg) {

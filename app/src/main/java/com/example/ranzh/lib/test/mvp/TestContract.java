@@ -1,4 +1,4 @@
-package com.example.ranzh.lib.test;
+package com.example.ranzh.lib.test.mvp;
 
 import com.example.library.base.MVPView;
 import com.example.library.presenter.IPresenter;
@@ -17,6 +17,8 @@ public interface TestContract {
     interface Presenter extends IPresenter {
 
         void testPres();
+
+        void cancel();
     }
 
 }

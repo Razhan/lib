@@ -12,20 +12,21 @@ import static com.google.common.base.Preconditions.checkNotNull;
  * Created by ranzh on 1/5/2017.
  */
 
-public abstract class UseCase<T> {
+public abstract class UseCase {
 
     private final PostExecutionThread postExecutionThread;
     private final ExecutionThread executionThread;
     private LambdaObserver disposable;
 
-    public UseCase(PostExecutionThread postExecutionThread, ExecutionThread executionThread) {
-        this.postExecutionThread = postExecutionThread;
+    public UseCase(ExecutionThread executionThread, PostExecutionThread postExecutionThread) {
         this.executionThread = executionThread;
+        this.postExecutionThread = postExecutionThread;
     }
 
-    protected abstract Observable<T> buildUseCaseObservable(Object... params);
+    protected abstract Observable buildUseCaseObservable(Object... params);
 
-    public void execute(LambdaObserver<T> observer, Object... params) {
+    @SuppressWarnings("unchecked")
+    public void execute(LambdaObserver observer, Object... params) {
         this.disposable = observer;
 
         this.buildUseCaseObservable(params)

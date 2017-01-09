@@ -1,6 +1,8 @@
 package com.example.library.presenter;
 
 
+import android.content.Context;
+
 import com.example.library.base.MVPView;
 
 /**
@@ -10,6 +12,11 @@ import com.example.library.base.MVPView;
 public abstract class BasePresenter<V extends MVPView> implements IPresenter {
 
     protected V view;
+    protected Context context;
+
+    public BasePresenter(Context context) {
+        this.context = context;
+    }
 
     @Override
     @SuppressWarnings("unchecked")
@@ -19,8 +26,10 @@ public abstract class BasePresenter<V extends MVPView> implements IPresenter {
 
     @Override
     public void detachView() {
+        context = null;
         view = null;
     }
+
 
     @Override
     public boolean isViewAttached() {
@@ -30,5 +39,10 @@ public abstract class BasePresenter<V extends MVPView> implements IPresenter {
     @Override
     public V getView() {
         return view;
+    }
+
+    @Override
+    public Context getContext() {
+        return context;
     }
 }

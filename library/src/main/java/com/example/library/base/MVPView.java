@@ -10,6 +10,6 @@ public interface MVPView {
 
     void showMessage(String msg);
 
-    Context context();
+    Context getContext();
 
 }
