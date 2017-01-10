@@ -4,7 +4,6 @@ import android.util.Log;
 
 import com.example.library.usecase.UseCase;
 import com.example.library.usecase.executor.ExecutionThread;
-import com.example.library.usecase.executor.PostExecutionThread;
 import com.example.ranzh.lib.test.data.ITestRepository;
 
 import javax.inject.Inject;
@@ -23,7 +22,8 @@ public class TestUseCase extends UseCase {
     ITestRepository repository;
 
     @Inject
-    public TestUseCase(ExecutionThread executionThread, PostExecutionThread postExecutionThread) {
+    public TestUseCase(@com.example.library.di.JobThread ExecutionThread executionThread,
+                       @com.example.library.di.UIThread ExecutionThread postExecutionThread) {
         super(executionThread, postExecutionThread);
     }
 

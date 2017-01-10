@@ -3,7 +3,6 @@ package com.example.ranzh.lib.di.components;
 import android.content.Context;
 
 import com.example.library.usecase.executor.ExecutionThread;
-import com.example.library.usecase.executor.PostExecutionThread;
 import com.example.ranzh.lib.di.modules.ApplicationModule;
 
 import javax.inject.Singleton;
@@ -20,8 +19,10 @@ public interface ApplicationComponent {
 
     Context context();
 
+    @com.example.library.di.JobThread
     ExecutionThread executionThread();
 
-    PostExecutionThread postExecutionThread();
+    @com.example.library.di.UIThread
+    ExecutionThread postExecutionThread();
 
 }

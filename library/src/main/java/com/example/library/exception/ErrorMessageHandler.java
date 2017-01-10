@@ -6,6 +6,6 @@ package com.example.library.exception;
 
 public interface ErrorMessageHandler {
 
-     String create(Throwable throwable);
+    String create(Throwable throwable);
 
 }

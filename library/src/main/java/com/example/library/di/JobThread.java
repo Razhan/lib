@@ -2,16 +2,15 @@ package com.example.library.di;
 
 import java.lang.annotation.Retention;
 
-import javax.inject.Scope;
+import javax.inject.Qualifier;
 
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 /**
- * Created by ranzh on 1/6/2017.
+ * Created by ranzh on 1/10/2017.
  */
 
-@Scope
+@Qualifier
 @Retention(RUNTIME)
-public @interface PerActivity {
+public @interface JobThread {
 }
-

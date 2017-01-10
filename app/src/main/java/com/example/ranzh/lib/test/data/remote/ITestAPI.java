@@ -1,6 +1,5 @@
 package com.example.ranzh.lib.test.data.remote;
 
-import com.example.ranzh.lib.test.data.ITestRepository;
 import com.example.ranzh.lib.test.data.model.TestResponse;
 
 import io.reactivex.Observable;

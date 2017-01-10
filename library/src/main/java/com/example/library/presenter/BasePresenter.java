@@ -21,7 +21,7 @@ public abstract class BasePresenter<V extends MVPView> implements IPresenter {
     @Override
     @SuppressWarnings("unchecked")
     public void attachView(MVPView view) {
-        this.view = (V)view;
+        this.view = (V) view;
     }
 
     @Override

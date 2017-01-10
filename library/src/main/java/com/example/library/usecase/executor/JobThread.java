@@ -14,9 +14,11 @@ import io.reactivex.schedulers.Schedulers;
 public class JobThread implements ExecutionThread {
 
     @Inject
-    JobThread() {}
+    JobThread() {
+    }
 
-    @Override public Scheduler getScheduler() {
+    @Override
+    public Scheduler getScheduler() {
         return Schedulers.newThread();
     }
 

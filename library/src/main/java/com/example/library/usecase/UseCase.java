@@ -1,7 +1,6 @@
 package com.example.library.usecase;
 
 import com.example.library.usecase.executor.ExecutionThread;
-import com.example.library.usecase.executor.PostExecutionThread;
 
 import io.reactivex.Observable;
 import io.reactivex.internal.observers.LambdaObserver;
@@ -14,11 +13,11 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 public abstract class UseCase {
 
-    private final PostExecutionThread postExecutionThread;
+    private final ExecutionThread postExecutionThread;
     private final ExecutionThread executionThread;
     private LambdaObserver disposable;
 
-    public UseCase(ExecutionThread executionThread, PostExecutionThread postExecutionThread) {
+    public UseCase(ExecutionThread executionThread, ExecutionThread postExecutionThread) {
         this.executionThread = executionThread;
         this.postExecutionThread = postExecutionThread;
     }

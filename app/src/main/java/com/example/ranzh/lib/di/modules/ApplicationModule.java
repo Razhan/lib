@@ -4,7 +4,6 @@ import android.content.Context;
 
 import com.example.library.usecase.executor.ExecutionThread;
 import com.example.library.usecase.executor.JobThread;
-import com.example.library.usecase.executor.PostExecutionThread;
 import com.example.library.usecase.executor.UIThread;
 import com.example.ranzh.lib.AndroidApplication;
 
@@ -34,13 +33,15 @@ public class ApplicationModule {
 
     @Provides
     @Singleton
+    @com.example.library.di.JobThread
     ExecutionThread provideThreadExecutor(JobThread jobThread) {
         return jobThread;
     }
 
     @Provides
     @Singleton
-    PostExecutionThread providePostExecutionThread(UIThread uiThread) {
+    @com.example.library.di.UIThread
+    ExecutionThread providePostExecutionThread(UIThread uiThread) {
         return uiThread;
     }
 
