@@ -2,8 +2,7 @@ package com.example.library.presenter;
 
 import android.content.Context;
 
-import com.example.library.base.MVPView;
-
+import com.example.library.base.ui.MVPView;
 
 public interface IPresenter {
 

@@ -7,7 +7,6 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Action;
 import io.reactivex.functions.Consumer;
 
-
 public abstract class UseCase {
 
     private final ExecutionThread postExecutionThread;

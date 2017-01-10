@@ -8,7 +8,7 @@ import javax.inject.Inject;
 public class ErrorHandler implements IErrorHandler {
 
     @Inject
-    public ErrorHandler() {
+    ErrorHandler() {
     }
 
     @Override

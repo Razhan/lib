@@ -1,7 +1,6 @@
-package com.example.library.base;
+package com.example.library.base.ui;
 
 import android.os.Bundle;
-
 
 public interface InitView {
 

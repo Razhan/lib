@@ -9,7 +9,6 @@ import android.net.NetworkInfo;
 
 import java.util.List;
 
-
 public final class MiscUtil {
 
     public static boolean isIntentAvailable(Context context, Intent intent) {

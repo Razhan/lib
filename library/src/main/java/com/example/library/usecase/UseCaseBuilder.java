@@ -6,7 +6,6 @@ import io.reactivex.internal.functions.Functions;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
-
 public final class UseCaseBuilder<T> {
 
     private Consumer<T> onSuccessCallback;

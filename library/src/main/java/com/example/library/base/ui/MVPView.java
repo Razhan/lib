@@ -1,5 +1,4 @@
-package com.example.library.base;
-
+package com.example.library.base.ui;
 
 public interface MVPView {
 

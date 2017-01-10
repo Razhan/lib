@@ -21,7 +21,7 @@ public final class TestPresenter extends BasePresenter<TestContract.View> implem
     private final UseCase testUseCase;
 
     @Inject
-    public TestPresenter(@Named(TestUseCase.NAME) UseCase testUseCase, Activity activity) {
+    TestPresenter(@Named(TestUseCase.NAME) UseCase testUseCase, Activity activity) {
         super(activity);
         this.testUseCase = testUseCase;
     }

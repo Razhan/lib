@@ -3,11 +3,10 @@ package com.example.library.presenter;
 
 import android.content.Context;
 
-import com.example.library.base.MVPView;
+import com.example.library.base.ui.MVPView;
 import com.example.library.exception.IErrorHandler;
 
 import javax.inject.Inject;
-
 
 public abstract class BasePresenter<V extends MVPView> implements IPresenter {
 

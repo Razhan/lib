@@ -6,7 +6,6 @@ import javax.inject.Singleton;
 import io.reactivex.Scheduler;
 import io.reactivex.schedulers.Schedulers;
 
-
 @Singleton
 public class JobThread implements ExecutionThread {
 

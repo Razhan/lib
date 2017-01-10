@@ -1,4 +1,4 @@
-package com.example.library.base;
+package com.example.library.base.ui;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -6,7 +6,6 @@ import android.support.annotation.NonNull;
 import com.example.library.presenter.BasePresenter;
 
 import javax.inject.Inject;
-
 
 public abstract class BaseMVPActivity<P extends BasePresenter> extends BaseActivity implements MVPView {
 

@@ -1,4 +1,4 @@
-package com.example.library.base;
+package com.example.library.base.ui;
 
 import android.content.pm.ActivityInfo;
 import android.graphics.Color;
@@ -16,7 +16,6 @@ import android.widget.Toast;
 import com.example.library.R;
 
 import butterknife.ButterKnife;
-
 
 public abstract class BaseActivity extends AppCompatActivity implements InitView {
 

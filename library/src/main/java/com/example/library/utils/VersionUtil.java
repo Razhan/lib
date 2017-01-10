@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.pm.PackageManager;
 import android.os.Build;
 
-
 public final class VersionUtil {
 
     public static int buildVersion() {

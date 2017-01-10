@@ -3,7 +3,7 @@ package com.example.ranzh.lib.test.mvp;
 import android.util.Log;
 import android.view.View;
 
-import com.example.library.base.BaseMVPActivity;
+import com.example.library.base.ui.BaseMVPActivity;
 import com.example.ranzh.lib.AndroidApplication;
 import com.example.ranzh.lib.R;
 import com.example.ranzh.lib.di.components.DaggerTestComponent;

@@ -1,6 +1,6 @@
 package com.example.ranzh.lib.test.mvp;
 
-import com.example.library.base.MVPView;
+import com.example.library.base.ui.MVPView;
 import com.example.library.presenter.IPresenter;
 
 /**
