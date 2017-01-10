@@ -4,15 +4,17 @@ package com.example.library.presenter;
 import android.content.Context;
 
 import com.example.library.base.MVPView;
+import com.example.library.exception.IErrorHandler;
 
-/**
- * Created by ranzh on 1/5/2017.
- */
+import javax.inject.Inject;
+
 
 public abstract class BasePresenter<V extends MVPView> implements IPresenter {
 
     protected V view;
     protected Context context;
+    @Inject
+    IErrorHandler errorHandler;
 
     public BasePresenter(Context context) {
         this.context = context;
@@ -30,7 +32,6 @@ public abstract class BasePresenter<V extends MVPView> implements IPresenter {
         view = null;
     }
 
-
     @Override
     public boolean isViewAttached() {
         return view != null;
@@ -44,5 +45,10 @@ public abstract class BasePresenter<V extends MVPView> implements IPresenter {
     @Override
     public Context getContext() {
         return context;
+    }
+
+    protected void showErrorMessage(Throwable throwable) {
+        String errorMsg = errorHandler.getErrorMessage(throwable);
+        getView().showMessage(errorMsg);
     }
 }

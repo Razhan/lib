@@ -17,9 +17,6 @@ import com.example.library.R;
 
 import butterknife.ButterKnife;
 
-/**
- * Created by ranzh on 1/4/2017.
- */
 
 public abstract class BaseActivity extends AppCompatActivity implements InitView {
 
@@ -103,7 +100,8 @@ public abstract class BaseActivity extends AppCompatActivity implements InitView
                             | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
                             | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
                             | View.SYSTEM_UI_FLAG_FULLSCREEN
-                            | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
+                            | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+            );
         }
     }
 

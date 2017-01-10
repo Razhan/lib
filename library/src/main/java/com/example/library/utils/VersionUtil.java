@@ -4,9 +4,6 @@ import android.content.Context;
 import android.content.pm.PackageManager;
 import android.os.Build;
 
-/**
- * Created by ranzh on 1/4/2017.
- */
 
 public final class VersionUtil {
 

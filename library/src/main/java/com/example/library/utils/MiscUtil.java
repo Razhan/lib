@@ -9,9 +9,6 @@ import android.net.NetworkInfo;
 
 import java.util.List;
 
-/**
- * Created by ranzh on 1/5/2017.
- */
 
 public final class MiscUtil {
 

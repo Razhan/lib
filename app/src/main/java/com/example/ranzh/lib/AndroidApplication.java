@@ -6,10 +6,6 @@ import com.example.ranzh.lib.di.components.ApplicationComponent;
 import com.example.ranzh.lib.di.components.DaggerApplicationComponent;
 import com.example.ranzh.lib.di.modules.ApplicationModule;
 
-/**
- * Created by ranzh on 1/6/2017.
- */
-
 public class AndroidApplication extends Application {
 
     private ApplicationComponent applicationComponent;

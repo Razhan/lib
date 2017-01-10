@@ -3,19 +3,18 @@ package com.example.library.usecase;
 import com.example.library.usecase.executor.ExecutionThread;
 
 import io.reactivex.Observable;
-import io.reactivex.internal.observers.LambdaObserver;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Action;
+import io.reactivex.functions.Consumer;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
-/**
- * Created by ranzh on 1/5/2017.
- */
 
 public abstract class UseCase {
 
     private final ExecutionThread postExecutionThread;
     private final ExecutionThread executionThread;
-    private LambdaObserver disposable;
+    private Disposable disposable;
 
     public UseCase(ExecutionThread executionThread, ExecutionThread postExecutionThread) {
         this.executionThread = executionThread;
@@ -25,13 +24,12 @@ public abstract class UseCase {
     protected abstract Observable buildUseCaseObservable(Object... params);
 
     @SuppressWarnings("unchecked")
-    public void execute(LambdaObserver observer, Object... params) {
-        this.disposable = observer;
-
-        this.buildUseCaseObservable(params)
+    void execute(Consumer onNext, Consumer<? super Throwable> onError, Action onComplete,
+                        Object... params) {
+        disposable = this.buildUseCaseObservable(params)
                 .subscribeOn(executionThread.getScheduler())
                 .observeOn(postExecutionThread.getScheduler())
-                .subscribe(observer);
+                .subscribe(onNext, onError, onComplete);
     }
 
     public void dispose() {

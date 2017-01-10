@@ -2,6 +2,7 @@ package com.example.ranzh.lib.di.components;
 
 import android.content.Context;
 
+import com.example.library.exception.IErrorHandler;
 import com.example.library.usecase.executor.ExecutionThread;
 import com.example.ranzh.lib.di.modules.ApplicationModule;
 
@@ -24,5 +25,7 @@ public interface ApplicationComponent {
 
     @com.example.library.di.UIThread
     ExecutionThread postExecutionThread();
+
+    IErrorHandler errorHandler();
 
 }

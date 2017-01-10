@@ -4,15 +4,13 @@ import android.app.Activity;
 import android.util.Log;
 
 import com.example.library.presenter.BasePresenter;
-import com.example.library.usecase.ObserverBuilder;
+import com.example.library.usecase.UseCaseBuilder;
 import com.example.library.usecase.UseCase;
 import com.example.ranzh.lib.test.data.model.TestResponse;
 import com.example.ranzh.lib.test.domain.TestUseCase;
 
 import javax.inject.Inject;
 import javax.inject.Named;
-
-import io.reactivex.internal.observers.LambdaObserver;
 
 /**
  * Created by ranzh on 1/6/2017.
@@ -29,15 +27,16 @@ public final class TestPresenter extends BasePresenter<TestContract.View> implem
     }
 
     @Override
-    public void testPres() {
+    public void testPres(String str) {
         Log.d("testPres", "testPres");
 
-        LambdaObserver observer = new ObserverBuilder<TestResponse>()
-                .onSuccess(res -> Log.d("res", res.getData().getApi_base_url()))
-                .build();
-
-        testUseCase.execute(observer);
-        getView().testView();
+        new UseCaseBuilder<TestResponse>(testUseCase)
+                .onSuccess(res -> {
+                    Log.d("res", res.getData().getApi_base_url());
+                    getView().testView();
+                })
+                .onError(this::showErrorMessage)
+                .build(str);
     }
 
     @Override

@@ -16,7 +16,7 @@ public interface TestContract {
 
     interface Presenter extends IPresenter {
 
-        void testPres();
+        void testPres(String str);
 
         void cancel();
     }

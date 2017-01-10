@@ -9,10 +9,6 @@ import com.example.library.presenter.BasePresenter;
 import javax.inject.Inject;
 
 
-/**
- * Created by ranzh on 1/5/2017.
- */
-
 public abstract class BaseMVPActivity<P extends BasePresenter> extends BaseActivity implements MVPView {
 
     @Inject
@@ -45,11 +41,6 @@ public abstract class BaseMVPActivity<P extends BasePresenter> extends BaseActiv
     @Override
     public void showMessage(String msg) {
         showToast(msg);
-    }
-
-    @Override
-    public Context getContext() {
-        return this;
     }
 
 }

@@ -12,10 +12,6 @@ import android.view.ViewGroup;
 import butterknife.ButterKnife;
 
 
-/**
- * Created by ranzh on 1/4/2017.
- */
-
 public abstract class BaseFragment extends Fragment implements InitView {
 
     protected Activity mActivity;

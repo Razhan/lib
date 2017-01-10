@@ -42,7 +42,7 @@ public class MainActivity extends BaseMVPActivity<TestPresenter> implements Test
         switch (view.getId()) {
             case R.id.button:
                 Log.d("onClick", "onClick");
-                getPresenter().testPres();
+                getPresenter().testPres("onClick");
                 break;
             case R.id.button2:
                 Log.d("onClick2", "onClick2");

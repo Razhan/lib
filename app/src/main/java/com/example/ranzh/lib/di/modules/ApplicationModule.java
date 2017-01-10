@@ -2,10 +2,12 @@ package com.example.ranzh.lib.di.modules;
 
 import android.content.Context;
 
+import com.example.library.exception.IErrorHandler;
 import com.example.library.usecase.executor.ExecutionThread;
 import com.example.library.usecase.executor.JobThread;
 import com.example.library.usecase.executor.UIThread;
 import com.example.ranzh.lib.AndroidApplication;
+import com.example.ranzh.lib.ErrorHandler;
 
 import javax.inject.Singleton;
 
@@ -43,6 +45,12 @@ public class ApplicationModule {
     @com.example.library.di.UIThread
     ExecutionThread providePostExecutionThread(UIThread uiThread) {
         return uiThread;
+    }
+
+    @Provides
+    @Singleton
+    IErrorHandler provideErrorHandler(ErrorHandler handler) {
+        return handler;
     }
 
 }

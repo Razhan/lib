@@ -7,10 +7,6 @@ import com.example.library.di.PerActivity;
 import dagger.Module;
 import dagger.Provides;
 
-/**
- * Created by ranzh on 1/9/2017.
- */
-
 @Module
 public class ActivityModule {
     private final Activity activity;

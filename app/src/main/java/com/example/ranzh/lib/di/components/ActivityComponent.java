@@ -7,10 +7,6 @@ import com.example.ranzh.lib.di.modules.ActivityModule;
 
 import dagger.Component;
 
-/**
- * Created by ranzh on 1/9/2017.
- */
-
 @PerActivity
 @Component(dependencies = ApplicationComponent.class, modules = ActivityModule.class)
 public interface ActivityComponent {
