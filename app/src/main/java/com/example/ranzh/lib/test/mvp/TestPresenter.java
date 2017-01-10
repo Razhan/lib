@@ -40,7 +40,7 @@ public final class TestPresenter extends BasePresenter<TestContract.View> implem
     }
 
     @Override
-    public void cancel() {
+    public void unSubscribe() {
         testUseCase.dispose();
     }
 }

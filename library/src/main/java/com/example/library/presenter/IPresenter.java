@@ -17,4 +17,6 @@ public interface IPresenter {
 
     Context getContext();
 
+    void unSubscribe();
+
 }

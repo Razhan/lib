@@ -46,21 +46,9 @@ public class MainActivity extends BaseMVPActivity<TestPresenter> implements Test
                 break;
             case R.id.button2:
                 Log.d("onClick2", "onClick2");
-                getPresenter().cancel();
+                getPresenter().unSubscribe();
                 break;
         }
     }
-
-//    @Override
-//    public void initView(Bundle savedInstanceState) {
-//        super.initView(savedInstanceState);
-//
-//        findViewById(R.id.button).setOnClickListener(v -> {
-//            Log.d("onClick", "onClick");
-//            getPresenter().testPres();
-//        });
-//
-//    }
-
 
 }

@@ -30,6 +30,7 @@ public abstract class BasePresenter<V extends MVPView> implements IPresenter {
     public void detachView() {
         context = null;
         view = null;
+        unSubscribe();
     }
 
     @Override
@@ -51,4 +52,5 @@ public abstract class BasePresenter<V extends MVPView> implements IPresenter {
         String errorMsg = errorHandler.getErrorMessage(throwable);
         getView().showMessage(errorMsg);
     }
+
 }

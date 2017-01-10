@@ -7,8 +7,6 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Action;
 import io.reactivex.functions.Consumer;
 
-import static com.google.common.base.Preconditions.checkNotNull;
-
 
 public abstract class UseCase {
 
@@ -25,7 +23,7 @@ public abstract class UseCase {
 
     @SuppressWarnings("unchecked")
     void execute(Consumer onNext, Consumer<? super Throwable> onError, Action onComplete,
-                        Object... params) {
+                 Object... params) {
         disposable = this.buildUseCaseObservable(params)
                 .subscribeOn(executionThread.getScheduler())
                 .observeOn(postExecutionThread.getScheduler())
@@ -33,7 +31,9 @@ public abstract class UseCase {
     }
 
     public void dispose() {
-        checkNotNull(disposable);
+        if (disposable == null) {
+            return;
+        }
 
         if (!disposable.isDisposed()) {
             disposable.dispose();

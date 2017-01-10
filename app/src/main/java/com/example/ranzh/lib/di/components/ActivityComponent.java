@@ -12,5 +12,4 @@ import dagger.Component;
 public interface ActivityComponent {
 
     Activity activity();
-
 }
